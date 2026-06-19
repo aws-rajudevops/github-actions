@@ -1,7 +1,6 @@
 name: Inputs
 on:
-workflow-dispatch: # Pipeline. One workflow can have multiple pipelines
-  Inputs:
+  workflow_dispatch:
     inputs:
       logLevel:
         description: 'Log level'
@@ -24,6 +23,7 @@ workflow-dispatch: # Pipeline. One workflow can have multiple pipelines
         description: 'Environment to run tests against'
         type: environment
         required: true
+
 jobs:
   print-tag:
     runs-on: ubuntu-latest
@@ -31,4 +31,4 @@ jobs:
       - name: Print the input tag to STDOUT
         run: echo  The tags are ${{ inputs.tags }}
       - name: Print the input tag to STDOUT
-        run: echo  The tags are ${{ inputs.environment }}        
+        run: echo  The tags are ${{ inputs.environment }}
