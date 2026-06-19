@@ -1,0 +1,11 @@
+name: Helloworld
+# when to trigger this pipeline,we can trigger on push or manual someother events like creating PR,updating PR,creating branches
+on: [push] # trigger
+jobs:
+  hello:
+    run-on: ubuntu-latest #Linux OS. we can have windows or linux
+    steps: #stages
+      - name: step1
+        run: echo "hello world"
+      - name: step2
+        run: echo "hello github actions"
