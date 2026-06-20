@@ -1,0 +1,11 @@
+name: Checkout
+on: [push] # triggers
+jobs: # Pipeline. One workflow can have multiple pipelines
+    buld: #this should unique
+        runs-on: ubuntu-latest # Linux OS. We can have windows or MAC
+        steps: # stages
+        #checkout will happen here
+            - name: checkout
+              uses: actions/checkout@v5
+            - name: display the files
+              run: ls -al
